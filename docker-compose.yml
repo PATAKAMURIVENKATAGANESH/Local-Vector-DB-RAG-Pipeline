@@ -1,0 +1,37 @@
+# version: '3'
+# services:
+#   chromadb:
+#     image: chromadb/chroma:latest
+#     container_name: chromadb
+#     environment:
+#       - CHROMA_DB_DIRECTORY=/opt/chroma_data  # Custom data directory
+#       - CHROMA_SERVER_HOST=0.0.0.0  # Allow connections from any host
+#       - CHROMA_SERVER_HTTP_PORT=8000  
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - chroma_data:/opt/chroma_data  # Mount the volume
+#     restart: always
+
+# volumes:
+#   chroma_data:
+#     driver: local  # This creates a Docker-managed volume that persists data
+version: '3.4'
+services:
+  weaviate:
+    image: semitechnologies/weaviate:latest
+    ports:
+    - 8080:8080
+    - 50051:50051
+    restart: on-failure:0
+    environment:
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+      DEFAULT_VECTORIZER_MODULE: 'none'
+      CLUSTER_HOSTNAME: 'node1'
+    volumes:
+      - weaviate_data:/var/lib/weaviate
+        # etc.  
+volumes:
+  weaviate_data:
