@@ -96,7 +96,7 @@ qa_chain = RetrievalQA.from_chain_type(
 )
 
 # Define keywords for fact-based information
-FACT_BASED_KEYWORDS = ["lab location", "pc assigned", "ETA", "vacation calendar", "leaves", "zero balancing", "A2-65 LAB", "A2-66 LAB", "jenkins automation", "BLR-ROW", "lab dashboard", "pc", "setup", "setup1", "setup2"]
+FACT_BASED_KEYWORDS = []
 
 def contains_fact_based_keywords(query):
     """
@@ -301,8 +301,8 @@ def process_folder(folder_path, document_type="static"):
 
 if __name__ == "__main__":
     # Folder containing the documents
-    static_folder_path = "C:/Users/nxa24481/Downloads/ganesh/AI/docs/dynamic-2"
-    aosp_path = "C:/Users/nxa24481/Downloads/interfaces-756b1b3d88a85162efe4b0a2d369e9b26d1b4b5e-security.tar/interfaces-756b1b3d88a85162efe4b0a2d369e9b26d1b4b5e-security"
+    static_folder_path = ""
+    aosp_path = ""
     # dynamic_folder_path = "C:/Users/nxa24481/Downloads/ganesh/AI/docs/dynamic"
     
     # # Preprocess and store documents in Weaviate
@@ -310,7 +310,7 @@ if __name__ == "__main__":
     # # process_folder(dynamic_folder_path, document_type="dynamic")
 
     # # Query the LLM using the RetrievalQA chain
-    query = "compare the both DPAS ROW EOS V2_2025-03-11_14-11-38_HTML.html file and logDataBaseIndex.html file and give me all the tests which are new , had different verdicts, which are missing in which file, the differences should be clearly highlighted."
+    query = "."
     print("Invoked")
     response = handle_query(query)
 

@@ -99,7 +99,7 @@ def process_pdf_folder(folder_path):
 
 if __name__ == "__main__":
     # Folder containing the PDFs
-    folder_path = "C:/Users/nxa24481/Downloads/ganesh/AI/docs"
+    folder_path = ""
 
     # Preprocess and store documents in Weaviate
     # process_pdf_folder(folder_path)

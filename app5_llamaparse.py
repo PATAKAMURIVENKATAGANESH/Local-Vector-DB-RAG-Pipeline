@@ -24,7 +24,7 @@ groq_api_key = os.getenv("GROQ_API_KEY")
 
 # Initialize Weaviate client
 weaviate_client = weaviate.connect_to_local(skip_init_checks=True)
-parser = LlamaParse(api_key="llx-KfM0zeantsWgMgMuBT7XipQ6UyVemRFrlqaclzodYwHT8dhn", parsing_instruction="The sheets contain information regarding the lab management system and maintenance.", result_type="markdown")
+parser = LlamaParse(api_key="", parsing_instruction="The sheets contain information regarding the lab management system and maintenance.", result_type="markdown")
 # Configure embeddings model
 embeddings_model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
 
@@ -75,7 +75,7 @@ qa_chain = RetrievalQA.from_chain_type(
 )
 
 # Define keywords for fact-based information
-FACT_BASED_KEYWORDS = ["lab location", "pc assigned", "ETA", "vacation calendar", "leaves", "zero balancing", "A2-65 LAB", "A2-66 LAB", "jenkins automation", "BLR-ROW", "lab dashboard", "pc", "setup", "setup1", "setup2"]
+FACT_BASED_KEYWORDS = []
 
 def contains_fact_based_keywords(query):
     """
@@ -184,15 +184,15 @@ def process_folder(folder_path, document_type="static"):
 
 if __name__ == "__main__":
     # Folder containing the documents
-    static_folder_path = "C:/Users/nxa24481/Downloads/ganesh/AI/docs/static"
-    dynamic_folder_path = "C:/Users/nxa24481/Downloads/ganesh/AI/docs/dynamic"
+    static_folder_path = ""
+    dynamic_folder_path = ""
 
     # Preprocess and store documents in Weaviate
     # process_folder(static_folder_path, document_type="static")
     process_folder(dynamic_folder_path, document_type="dynamic")
 
     # Query the LLM using the RetrievalQA chain
-    query = "which test setup are connected to NRW93436?"
+    query = ""
     print("Invoked")
     response = handle_query(query)
 

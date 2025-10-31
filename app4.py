@@ -77,7 +77,7 @@ qa_chain = RetrievalQA.from_chain_type(
 )
 
 # Define keywords for fact-based information
-FACT_BASED_KEYWORDS = ["pc's", "lab pc's","lab location", "pc assigned", "ETA", "vacation calendar", "leaves", "zero balancing", "A2-65 LAB", "A2-66 LAB", "jenkins automation", "BLR-ROW", "lab dashboard", "pc", "setup", "setup1", "setup2", "hardware used", "hardware", "board", "reader", "SPI", "I3C", "I2C", "SN300", "SN330", "vulcan", "A15", "A14", "SN220", "SN110", "A2 66", "A2 65", "A2-66", "A2-65"]
+FACT_BASED_KEYWORDS = []
 
 def contains_fact_based_keywords(query):
     """
