@@ -297,35 +297,3 @@ print(client.collections.list_all())
 ### Query Performance
 
 Monitor response times and adjust retrieval parameters accordingly.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For issues and questions:
-- Create an issue in the GitHub repository
-- Check the troubleshooting section
-- Review the API documentation
-
-## 🔮 Future Enhancements
-
-- [ ] Multi-language support
-- [ ] Real-time document updates
-- [ ] Advanced query analytics
-- [ ] Custom model fine-tuning
-- [ ] Distributed vector storage
-- [ ] Authentication and user management
-
----
-
-**Built with ❤️ using LangChain, Weaviate, and modern AI technologies**
